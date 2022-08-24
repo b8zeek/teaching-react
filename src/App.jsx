@@ -1,24 +1,19 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
+import Header from './components/Header'
 import LoginWrapper from './wrapper/LoginWrapper'
 import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
 
 function App() {
   return (
     <div className="App">
-      <header style={{
-        width: '100%',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        background: 'rgba(255, 255, 255, .1)'
-      }}>
-        <Link to=''>Home</Link>
-      </header>
+      <Header />
       <LoginWrapper>
         <Routes>
           <Route path='' element={<HomePage />} />
+          <Route path='about' element={<AboutPage />} />
         </Routes>
       </LoginWrapper>
     </div>
