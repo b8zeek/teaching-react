@@ -1,13 +1,13 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 
+import LoginWrapper from './wrapper/LoginWrapper'
 import HomePage from './pages/HomePage'
 
 function App() {
-
   return (
     <div className="App">
-      <div style={{
+      <header style={{
         width: '100%',
         position: 'fixed',
         top: 0,
@@ -15,10 +15,12 @@ function App() {
         background: 'rgba(255, 255, 255, .1)'
       }}>
         <Link to=''>Home</Link>
-      </div>
-      <Routes>
-        <Route path='' element={<HomePage />} />
-      </Routes>
+      </header>
+      <LoginWrapper>
+        <Routes>
+          <Route path='' element={<HomePage />} />
+        </Routes>
+      </LoginWrapper>
     </div>
   )
 }
